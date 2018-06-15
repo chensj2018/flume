@@ -59,7 +59,8 @@ public class MemoryChannel extends BasicChannelSemantics {
   private static final Integer defaultByteCapacityBufferPercentage = 20;
 
   private static final Integer defaultKeepAlive = 3;
-
+  private static final Integer defaultPutTimeout = 10;
+  
   private class MemoryTransaction extends BasicTransactionSemantics {
     private LinkedBlockingDeque<Event> takeList;
     private LinkedBlockingDeque<Event> putList;

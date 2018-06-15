@@ -122,28 +122,26 @@ public class HeaderSplitInterceptor implements Interceptor {
   @Override
   public Event intercept(Event event) {
     Map<String, String> headers = event.getHeaders();
-    
+
     if (!headers.containsKey(splitKey)) {
       logger.error("{} is not in header", splitKey);
       return event;
     }
-    
+
     Matcher matcher = regex.matcher(headers.get(splitKey));
     if (matcher.find()) {
       for (int group = 0, count = matcher.groupCount(); group < count; group++) {
         int groupIndex = group + 1;
         if (groupIndex > serializers.size()) {
           if (logger.isDebugEnabled()) {
-            logger.debug("Skipping group {} to {} due to missing serializer",
-                group, count);
+            logger.debug("Skipping group {} to {} due to missing serializer", group, count);
           }
           break;
         }
-        headers.put(serializers.get(group),matcher.group(groupIndex));
+        headers.put(serializers.get(group), matcher.group(groupIndex));
       }
-    }
-    else {
-    	logger.warn("no mathch any values");
+    } else {
+      logger.warn("no mathch any values");
     }
     return event;
   }
