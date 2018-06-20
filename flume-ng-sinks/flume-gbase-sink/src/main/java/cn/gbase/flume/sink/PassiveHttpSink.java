@@ -16,7 +16,7 @@
  limitations under the License.
  */
 
-package org.apache.flume.sink.gbase;
+package cn.gbase.flume.sink;
 
 import java.io.IOException;
 import java.lang.management.ManagementFactory;

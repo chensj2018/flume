@@ -16,7 +16,7 @@
  limitations under the License.
  */
 
-package org.apache.flume.sink.gbase;
+package cn.gbase.flume.sink;
 
 import com.google.common.base.Charsets;
 
@@ -51,7 +51,7 @@ public class GBase8aSinkConstants {
 
   /* 参数默认值 */
   public static final int DFLT_INTERVAL = 10000; // ms
-  public static final String DFLT_HANDLER = "org.apache.flume.sink.gbase.PassiveHttpSinkBlobHandler";
+  public static final String DFLT_HANDLER = "cn.gbase.flume.sink.PassiveHttpSinkBlobHandler";
   public static final String DFLT_DRIVER_CLASS = "com.gbase.jdbc.Driver";
   public static final int DFLT_LOAD_INTERVAL = 5; // s
 

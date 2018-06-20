@@ -16,7 +16,7 @@
  limitations under the License.
  */
 
-package org.apache.flume.sink.gbase;
+package cn.gbase.flume.sink;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -70,6 +70,8 @@ import org.junit.Test;
 
 import com.google.common.base.Charsets;
 
+import cn.gbase.flume.sink.GBase8aSinkConstants;
+import cn.gbase.flume.sink.PassiveHttpSink;
 import junit.framework.Assert;
 
 /**
